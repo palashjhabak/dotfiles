@@ -7,6 +7,11 @@ call vundle#begin()
 
 "For linting errors
 Plugin 'w0rp/ale'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
+Plugin 'skywind3000/asyncrun.vim'
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
 call vundle#end()
 
