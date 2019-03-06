@@ -13,6 +13,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'skywind3000/asyncrun.vim'
+Plugin 'ternjs/tern_for_vim'
+
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
 call vundle#end()
@@ -24,3 +26,6 @@ let b:ale_fixers = ['prettier', 'eslint']
 
 syntax on
 set incsearch
+
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
