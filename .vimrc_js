@@ -6,6 +6,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "For linting errors
+Plugin 'kien/ctrlp.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'w0rp/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -14,4 +16,7 @@ Plugin 'skywind3000/asyncrun.vim'
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
 call vundle#end()
+
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
 
