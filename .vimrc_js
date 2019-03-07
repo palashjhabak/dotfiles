@@ -29,3 +29,8 @@ set incsearch
 
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|node_modules\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
