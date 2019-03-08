@@ -1,13 +1,20 @@
-"vundle
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+
+"Vundle Plugin List Begin
 call vundle#begin()
 
 "For linting errors
+
+"File Search
 Plugin 'kien/ctrlp.vim'
+
+"Vim Colors
 Plugin 'altercation/vim-colors-solarized'
+
+"Vim JS, Linting etc
 Plugin 'w0rp/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -36,3 +43,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|node_modules\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+  
+"Line Number
+set nu
