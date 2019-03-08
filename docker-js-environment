@@ -8,11 +8,9 @@ RUN apt-get install -y curl
 RUN apt-get install -y wget
 RUN apt-get install -y gnupg2
 
-RUN git clone https://github.com/palashjhabak/dotfiles.git /root/dotfiles
-
 RUN git clone https://github.com/VundleVim/Vundle.vim.git /root/.vim/bundle/Vundle.vim
 
-RUN cp /root/dotfiles/.vimrc-js /root/.vimrc
+RUN cp .vimrc-js /root/.vimrc
 
 RUN vim -c 'PluginInstall' -c 'qa!' 
 
@@ -39,9 +37,8 @@ RUN yarn global add install-peerdeps
 
 RUN install-peerdeps --dev eslint-config-airbnb
 
-RUN cp /root/dotfiles/.eslintrc.json .
-RUN cp /root/dotfiles/.tern-project /root/.tern-project
+RUN cp .eslintrc.json .
+RUN cp .tern-project /root/.tern-project
 
 RUN yarn add --dev eslint babel-eslint eslint-plugin-react
-
 RUN yarn add --dev prettier eslint-config-prettier eslint-plugin-prettier 
