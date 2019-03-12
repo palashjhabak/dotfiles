@@ -21,6 +21,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'leafgarland/typescript-vim'
 
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
