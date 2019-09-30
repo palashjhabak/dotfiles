@@ -1,1 +1,57 @@
+"COLOR
+syntax enable "Enable Syntaxt highlighting
 
+"TABS
+set tabstop=4 "Number of visible spaces per TAB
+set softtabstop=4 "Number of spaces in TAB when editing
+set expandtab "TABS are spaces
+set shiftwidth=4 "Number of spaces in << and >> command
+
+"UI
+set number "Show line numbers
+set showcmd "Show last used command
+set cursorline "Highlight current line
+filetype indent on "load filetype-specific indentation
+filetype plugin on "load fileype-specific plugin
+set wildmenu "visual autocomplete for vim commands
+set guifont=Cascadia\ Code:h12
+
+"SEARCHING
+set showmatch "Automatically highlight the matching parenthesis
+set incsearch "Search as we type
+set hlsearch "Highlight Search
+
+"MOVEMENT
+nnoremap j gj
+nnoremap k gk
+
+"Install Vundle first
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'kien/ctrlp.vim' "Fuzzy file search
+Plugin 'VundleVim/Vundle' "Vundle Vim
+"Plugin 'davidhalter/jedi-vim' "Python syntax
+"Plugin 'w0rp/ale' "Linting Engine
+Plugin 'python-mode/python-mode' "Python IDE
+call vundle#end()
+
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_clear_cache_on_exit = 0
+
+"Python-mode Settings
+let g:pymode_python = 'python3'
+let g:pymode_options_max_line_length = 120
+let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_fly = 1
+let g:pymode_rope = 1
+let g:pymode_rope_lookup_project = 1
+let g:pymode_rope_regenerate_on_write = 0
+let g:pymode_rope_show_doc_bind = '<C-c>d'
+let g:pymode_rope_complete_on_dot = 1
+"let g:pymode_rope_completion = 1
+"let g:pymode_rope_autoimport = 1
